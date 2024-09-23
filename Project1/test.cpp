@@ -1,22 +1,27 @@
 #include <iostream>
 using namespace std;
 
-void Test(int Value0, int Value1, int Value2, int Value3)
+int StringCount(const char* const _Str)
 {
-	int* Ptr = &Value0;
+    int Count = 0;
 
-	int TestValue0 = *Ptr;
+    while (_Str[Count])
+    {
+        if (_Str[Count] != 0)
+        {
+            Count++;
+        }
+    }
 
-	int TestValue1 = *(Ptr + 2);
-	int TestValue2 = *(Ptr + 4);
-	int TestValue3 = *(Ptr + 6);
-
-	int a = 0;
+    return Count;
 }
 
 int main()
 {
-	Test(10, 20, 30, 40);
+    int Count = strlen("asdfBBBB");
 
+    int Count2 = StringCount("asdfBBBB");
 
+    int a = 0;
 }
+
