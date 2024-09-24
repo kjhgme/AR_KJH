@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <conio.h>
 
 const int LINECOUNT = 50;
 
@@ -77,6 +78,29 @@ void MonsterStatusRender()
     StatusRender(MonsterName, MonsterAtt, MonsterHp);
 }
 
+void DamageLogic(const char* const _AttName, const char* const _DefName, int& _DefHp, int _Att)
+{
+    _DefHp -= _Att;
+}
+
+void DamageRender(const char* const _AttName, const char* const _DefName, int& _DefHp, int _Att)
+{
+    printf_s("%s 가 %s를 공격해서 %d의 데미지를 입혔습니다.\n", _AttName, _DefName, _Att);
+}
+
+
+void Damage(const char* const _AttName, const char* const _DefName, int& _DefHp, int _Att)
+{
+    // 게임 로직
+    DamageLogic(_AttName, _DefName, _DefHp, _Att);
+
+    // 랜더링
+    DamageRender(_AttName, _DefName, _DefHp, _Att);
+}
+
+
+
+
 int main()
 {
     // char Test0[100] = "Player";
@@ -89,8 +113,43 @@ int main()
     PlayerStatusRender();
     MonsterStatusRender();
 
-    // printf_s("싸운다");
-    // 나는 이걸 플레이어라고 생각할 겁니다.
+    while (true)
+    {
+        system("cls");
+
+        char Input = ' ';
+
+        PlayerStatusRender();
+        MonsterStatusRender();
+        Input = _getch();
+
+
+        system("cls");
+        PlayerStatusRender();
+        MonsterStatusRender();
+        Damage(PlayerName, MonsterName, MonsterHp, PlayerAtt);
+
+        system("cls");
+        PlayerStatusRender();
+        MonsterStatusRender();
+        DamageRender(PlayerName, MonsterName, MonsterHp, PlayerAtt);
+
+        Input = _getch();
+
+
+        system("cls");
+        PlayerStatusRender();
+        MonsterStatusRender();
+        Damage(MonsterName, PlayerName, PlayerHp, MonsterAtt);
+
+        system("cls");
+        PlayerStatusRender();
+        MonsterStatusRender();
+        DamageRender(PlayerName, MonsterName, MonsterHp, PlayerAtt);
+        DamageRender(MonsterName, PlayerName, PlayerHp, MonsterAtt);
+
+        Input = _getch();
+    }
 
 
 }
