@@ -40,25 +40,75 @@ void NumberToString(char* Buffer, int BufferSize, int _Value)
         Buffer[cnt - 1 - i] = temp;
     }
 
-    cout << Buffer << endl;
+    cout << Buffer;
 
     return;
 }
 
+const int IntMaxCount = 10;
+const int ParameterInter = 8;
+
+int MyPrintf(const char* const _Ptr, ...)
+{
+    __int64 FAdd = reinterpret_cast<__int64>(&_Ptr);
+
+    int ChCount = 0;
+
+    while (_Ptr[ChCount])
+    {
+        char Ch = _Ptr[ChCount];
+
+        if (Ch == '%')
+        {
+            Ch = _Ptr[ChCount + 1];
+
+            switch (Ch)
+            {
+            case 'd':
+            {
+                int* Ptr = reinterpret_cast<int*>(FAdd += ParameterInter);
+                int ConvertValue = *Ptr;
+                char Arr[IntMaxCount] = {};
+                NumberToString(Arr, IntMaxCount, ConvertValue);
+                ChCount += 2;
+                break;
+            }
+            default:
+                break;
+            }
+        }
+
+        putchar(_Ptr[ChCount]);
+        ChCount += 1;
+    }
+
+    return ChCount;
+}
+
 int main()
 {
-    // 5
-    int Result0 = NumberCount(12358);
-    // 4
-    int Result1 = NumberCount(5258);
-    // 7
-    int Result2 = NumberCount(5258111);
+    MyPrintf("Number : %d\n", 12321);
 
-    // 0은 영
+    int Value = 123;
 
-    char Buffer[100] = { 0 };
+    char Arr[IntMaxCount] = {};
+    // 100이라는 숫자부터 시작해야한다는것은 어떻게 알수 있을까?
+    int NumberCountValue = NumberCount(Value);
 
-    NumberToString(Buffer, 100, 3712);
-    // Buffer == "3712"
+    int MulValue = 1;
+
+    for (int i = 0; i < NumberCountValue - 1; i++)
+    {
+        MulValue *= 10;
+    }
+
+    Arr[0] = Value / MulValue;
+    // MulValue -= 1000;
+
+    Arr[1] = Value / MulValue;
+    // MulValue -= 100;
+
+    Arr[2] = Value / MulValue;
+    // MulValue -= 10;
 }
 
