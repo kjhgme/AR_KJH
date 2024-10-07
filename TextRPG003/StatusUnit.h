@@ -5,7 +5,11 @@
 class UStatusUnit : public UObject
 {
 public:
-	virtual void StatusRender();
+	void TopLine();
+	void BottomLine();
+
+	virtual void MainStatusRender();
+	void StatusRender();
 
 	void SetHp(int _Value)
 	{
