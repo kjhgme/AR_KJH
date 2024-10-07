@@ -12,15 +12,6 @@ UPlayer::UPlayer()
 	// std::cout << "플레이어 생성자" << std::endl;
 }
 
-void UPlayer::StatusRender()
-{
-    TopLine();
-
-    MainStatusRender();
-
-    BottomLine();
-}
-
 // 맴버함수를 구현할대는 이러면 그냥 전역함수다.
 // 명확한 이름을 명시해줘야 한다.
 // 어떤 클래스에 속한건지 명시해줘야 한다.

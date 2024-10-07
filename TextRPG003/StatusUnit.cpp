@@ -16,6 +16,12 @@ void UStatusUnit::TopLine()
     printf_s("\n");
 }
 
+void UStatusUnit::MainStatusRender()
+{
+    printf_s("공격력 : %d ~ %d\n", MinAtt, MaxAtt);
+    printf_s("체력 : %d\n", Hp);
+}
+
 void UStatusUnit::BottomLine()
 {
     for (int i = 0; i < LINECOUNT; i += 1)
@@ -23,12 +29,6 @@ void UStatusUnit::BottomLine()
         printf_s("-");
     }
     printf_s("\n");
-}
-
-void UStatusUnit::MainStatusRender()
-{
-    printf_s("공격력 : %d ~ %d\n", MinAtt, MaxAtt);
-    printf_s("체력 : %d\n", Hp);
 }
 
 void UStatusUnit::StatusRender()
