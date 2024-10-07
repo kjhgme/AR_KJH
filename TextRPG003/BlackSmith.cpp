@@ -51,6 +51,9 @@ void BlackSmith::UpgradeWeapon(UPlayer& _Player)
 	if (_Player.GetEquipAtt() >= 15)
 		return;
 
+	if (_Player.GetGold() < ((_Player.GetEquipAtt() + 1) * 100))
+		return;
+
 	_Player.SetGold(_Player.GetGold() - ((_Player.GetEquipAtt() + 1) * 100));
 
 	if (rand() % 2 == 0)
