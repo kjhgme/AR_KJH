@@ -48,6 +48,8 @@ class UPlayer : public UFightUnit
 public:
 	UPlayer();
 
+	void StatusTextPrint() override;
+
 	// 나쁜게 아닌데 절제 없이 하다보면 순환참조 및 문제가 생긴다.
 	// 헤더에다가 구현하다보면 
 	// 그 헤더가 include cpp를 컴파일데 시간 오래걸리게 된다.
@@ -70,10 +72,15 @@ public:
 		return CurZoneIndex;
 	}
 
-	void SaveFileLoad();
+	int GetEquipAtt()
+	{
+		return EquipAtt;
+	}
 
-
-	void MainStatusRender() override; 
+	void SetEquipAtt(int _EquipAtt)
+	{
+		EquipAtt = _EquipAtt;
+	}
 
 protected:
 

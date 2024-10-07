@@ -26,6 +26,9 @@
     <Filter Include="2_Contents\1_Actor\Component">
       <UniqueIdentifier>{4c1416cf-693a-4d25-b066-e530ef884e44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2_Contents\2_Map\Building">
+      <UniqueIdentifier>{50e1acb7-2ed0-4d3b-8df6-54adc8838c95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object.cpp">
@@ -64,6 +67,9 @@
     <ClCompile Include="ContentsConst.cpp">
       <Filter>0_Base</Filter>
     </ClCompile>
+    <ClCompile Include="BlackSmith.cpp">
+      <Filter>2_Contents\2_Map\Building</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -98,6 +104,9 @@
     </ClInclude>
     <ClInclude Include="ContentsConst.h">
       <Filter>0_Base</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackSmith.h">
+      <Filter>2_Contents\2_Map\Building</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
