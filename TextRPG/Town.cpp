@@ -1,3 +1,4 @@
+#include <BaseSystem/EngineDebug.h>
 #include <iostream>
 #include <conio.h>
 
@@ -15,12 +16,11 @@ UZone* UTown::InPlayer()
 {
 	InMsgPrint();
 
-	UPlayer& _Player = TextRpgCore::GetPlayer();
+	APlayer& _Player = TextRpgCore::GetPlayer();
 
 	while (true)
 	{
 		system("cls");
-
 		ZonePrint();
 		_Player.StatusRender();
 
@@ -37,20 +37,25 @@ UZone* UTown::InPlayer()
 			BS.InPlayer();
 			break;
 		}
-
 		case '2':
 		{
-			UZone* NextZone = ConnectingProgress();
-			return NextZone;
+			if (false == IsConnectEmpty())
+			{
+				UZone* NextZone = ConnectingProgress();
+				return NextZone;
+			}
+			else {
+				MSGASSERT("연결된 지역이 하나도 없습니다");
+				return nullptr;
+			}
+
 			break;
 		}
-
 		case '0':
 		case '3':
 			printf_s("아직 완성되지 않은 기능입니다.");
 			_getch();
 			return nullptr;
-
 		default:
 			break;
 		}

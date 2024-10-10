@@ -1,5 +1,4 @@
 #pragma once
-
 #include "BlackSmith.h"
 #include "Zone.h"
 

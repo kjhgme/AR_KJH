@@ -5,6 +5,16 @@
 class UObject
 {
 public:
+	UObject()
+	{
+
+	}
+
+	virtual ~UObject()
+	{
+
+	}
+
 	void SetName(const char* const _Name);
 	inline const char* GetName()
 	{
@@ -15,7 +25,7 @@ public:
 	void BotLine();
 
 private:
-	char Name[static_cast<int>(Enums::MAXS::NAMEMAX)];
+	char Name[static_cast<int>(Enums::MAXS::NAMEMAX)] = {0,};
 };
 
 

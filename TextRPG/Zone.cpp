@@ -4,6 +4,7 @@
 
 #include "Zone.h"
 
+
 void UZone::InMsgPrint()
 {
 	system("cls");
@@ -68,6 +69,7 @@ bool UZone::Connecting(UZone* _LinkZone)
 
 UZone* UZone::ConnectingProgress()
 {
+
 	while (true)
 	{
 		ConnectingPrint();
@@ -78,6 +80,10 @@ UZone* UZone::ConnectingProgress()
 		if (Select >= 1 && Select <= SelectMax)
 		{
 			return ConnectingZones[Select - 1];
+		}
+		else if(Select <= (SelectMax + 1))
+		{
+			return this;
 		}
 	}
 
@@ -95,9 +101,10 @@ void UZone::ConnectingPrint()
 		if (nullptr != ConnectingZones[i])
 		{
 			const char* NamePtr = ConnectingZones[i]->GetName();
-
 			printf_s("%d. %s로 이동.\n", StartIndex, NamePtr);
 			StartIndex += 1;
 		}
 	}
+
+	printf_s("%d. %s로 돌아간다.\n", StartIndex, GetName());
 }

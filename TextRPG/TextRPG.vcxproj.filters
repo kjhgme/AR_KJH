@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Actor.h" />
-    <ClInclude Include="Monster.h" />
     <ClInclude Include="TextRpgCore.h">
       <Filter>Core</Filter>
     </ClInclude>
@@ -36,10 +34,20 @@
     <ClInclude Include="Object.h">
       <Filter>Object</Filter>
     </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Object\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Object\Actor\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="Goblin.h">
+      <Filter>Object\Actor\Contents\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Orc.h">
+      <Filter>Object\Actor\Contents\Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Actor.cpp" />
-    <ClCompile Include="Monster.cpp" />
     <ClCompile Include="TextRpgCore.cpp">
       <Filter>Core</Filter>
     </ClCompile>
@@ -73,6 +81,18 @@
     <ClCompile Include="Object.cpp">
       <Filter>Object</Filter>
     </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Object\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Object\Actor\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="Goblin.cpp">
+      <Filter>Object\Actor\Contents\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Orc.cpp">
+      <Filter>Object\Actor\Contents\Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Global">
@@ -98,6 +118,9 @@
     </Filter>
     <Filter Include="Core">
       <UniqueIdentifier>{2082d7dc-b459-4b01-a5fb-278865f33a93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Actor\Contents\Monster">
+      <UniqueIdentifier>{354f3bdb-b1ce-4079-b239-8a29597bc365}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

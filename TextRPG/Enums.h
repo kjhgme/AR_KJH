@@ -10,4 +10,12 @@ public:
 		ZONELINKMAX = 5,
 		LINECOUNT = 50
 	};
+
+	enum class MONSTERTYPE
+	{
+		NONE = 0,
+		GOBLIN,
+		ORC
+	};
+
 };

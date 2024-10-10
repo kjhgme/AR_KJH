@@ -1,14 +1,15 @@
 #include <iostream>
+
 #include "Player.h"
 
-UPlayer::UPlayer()
+APlayer::APlayer()
 {
 	UObject* ObjectPtr = this;
 	UStatusUnit* StatusUnitPtr = this;
 	UFightUnit* FightUnitPtr = this;
 }
 
-void UPlayer::StatusTextRender()
+void APlayer::StatusTextRender()
 {
 	printf_s("공격력 : %d ~ %d + %d\n", MinAtt, MaxAtt, EquipAtt);
 	printf_s("체력 : %d\n", Hp);
